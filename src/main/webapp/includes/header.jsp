@@ -1,12 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="../js/functions.js"></script>
+
+<div>
+	로그인 한 사용자의 아이디 : ${loginUserId } / 로그인 한 사용자의 이름 : ${loginUserName }
+</div>
 
 <header>
 	<div id="login_area">
 		<form action="#" method="POST">
+			<%-- 로그인 한 상태라면 로그인한 상태의 헤더를 출력 --%>
+			<c:choose>
+				<c:when test="">
+				
+				</c:when>
+				
+				<c:otherwise>
+					<%-- 로그인하지 않은 상태라면 로그인하지 않은 상태의 헤더를 출력 --%>
+					<input type="text" name="id" placeholder="아이디" id="id">
+					<input type="password" name="pw" placeholder="비밀번호" id="pw">
+					<input type="submit" value="로그인" id="login_btn">
+				</c:otherwise>
+			</c:choose>
+			
+			
+			
+			<%-- 로그인하지 않은 상태라면 로그인하지 않은 상태의 헤더를 출력 --%>
 			<input type="text" name="id" placeholder="아이디" id="id">
 			<input type="password" name="pw" placeholder="비밀번호" id="pw">
 			<input type="submit" value="로그인" id="login_btn">
